@@ -1,0 +1,200 @@
+/*  ========================================================================  *\
+    
+    * OVERVIEW
+          
+    * This file manages the layout of the page.
+    * Instead of placing them separately, we link them to the components.
+
+    * This creates a connected but separate system.
+    * Which does nothing but say some parameters:
+    * For example: what size should they be and where should they appear.
+    
+    * The classes declared here can be called on any container.
+    * They wear the right size and behave the right way.
+    
+\*  ========================================================================  */
+
+/*  ========================================================================  *\
+    
+    * C O M M E N T
+    
+    * CONTAINER
+    *     .container;
+    * @media(max-width: 768px);
+    
+    * HEADER
+    *     .header;
+    *         .site-logo;
+    *         .navigation;
+    
+    * MAIN
+    *     main;
+    *         .maps;  
+    *         .google-maps;
+    *         .adress;
+    *         .email;
+    *         .icon
+    *             ul, li;
+    
+    * SECTION
+    *     section;
+    *         .form;
+    *             .form-name;
+    *             .form-email;
+    *             .form-messeage;
+    
+    * FOOTER
+    *     footer;
+
+\*  ========================================================================  */
+
+
+/*  ========================================================================  *\
+    C O N T A I N E R
+\*  ========================================================================  */
+
+.container {
+    display: grid;
+    grid-template-columns: 13vw 1fr 1fr 13vw;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "header header header header"
+        ". main section ."
+        "footer footer footer footer";
+    column-gap: 30px;  /*  30px  */
+    row-gap: 40px;
+}
+
+@media(max-width: 768px) {
+    .container {
+        display: grid;
+        grid-template-columns: 5vw 1fr 5vw;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "header header header"
+            ". main ."
+            ". section ."
+            "footer footer footer";
+        row-gap: 20px;
+    }
+}
+
+
+/*  ========================================================================  *\
+    H E A D E R
+\*  ========================================================================  */
+
+header {
+    grid-area:        header;
+    display:          table;
+    
+    width:            auto;
+    height:           80px;
+    background-color: #6200ea;
+}
+
+    .site-logo {
+        display:        table-cell;
+
+        padding-left:   14.75vw;
+        vertical-align: middle;
+        text-align:     left;
+    }
+
+    .navigation {
+        display:          table-cell;
+
+        padding-right:    14.75vw;
+        vertical-align:   middle;
+        text-align:       right;
+    }
+
+
+/*  ========================================================================  *\
+    M A I N
+\*  ========================================================================  */
+
+main {
+    grid-area: main;
+
+    height:           auto;
+    padding:          60px;
+    border:           1px;
+    border-radius:    15px;
+    background-color: #ffffff;
+}
+
+    .maps,
+    .google-maps {
+        width:         100%;
+        height:        280px;
+        border:        1px;
+        border-radius: 15px;
+    }
+
+    .adress,
+    .email,
+    .icon {
+        width:      100%;
+        text-align: left;
+        margin-top: 30px;
+    }
+
+        ul {
+            list-style-type: none;
+        }
+
+            li {
+                display: inline;
+            }
+
+                .social-icon {
+                    margin-right: 15px;
+                }
+
+
+/*  ========================================================================  *\
+    S E C T I O N
+\*  ========================================================================  */
+
+section {
+    grid-area:        section;
+
+    height:           auto;
+    padding:          60px;
+    border:           1px;
+    border-radius:    15px;
+    background-color: #ffffff;
+}
+
+.form {
+    margin: 5px 0px 0px 0px;
+}
+
+    .form-name,
+    .form-email,
+    .form-messeage {
+        width:      calc(100% - 25px);
+        margin-top: 15px;
+        padding:    16px 0px 16px 24px;
+        background: #f4f3f5 0% 0% no-repeat padding-box;
+        border:     none;
+    }
+
+    .form-messeage {
+        height: 120px;
+    }
+
+
+/*  ========================================================================  *\
+    F O O T E R
+\*  ========================================================================  */
+
+footer {
+    grid-area:        footer;
+
+    margin-top:       20px;
+    padding:          42.5px;   /*  43px  */
+    background-color: #211138;
+    text-align:       center;
+}
