@@ -26,6 +26,9 @@
     *     .menu;
     *         .menu:hover;
     *         .menu:active;
+    *     @media(max-width: 768px);
+    *     @media(max-width: 1025px);
+    *
     *     .telnumber,
     *     .email;
     *         .telnumber:hover,
@@ -129,6 +132,26 @@ a {
     .menu:active {
         color:     #ffffff;
     }
+
+@media(max-width: 1025px) {
+    .menu {
+        display:       inline-block;
+        margin:        0px 0px 0px 60px;
+        padding:       32.5px 0px 28.5px 0px;
+        border-bottom: 4px solid;
+        border-color:  #6200ea;
+    }
+}
+
+@media(max-width: 768px) {
+    .menu {
+        display:       inline-block;
+        margin:        0px 20px 0px 20px;
+        padding:       32.5px 0px 28.5px 0px;
+        border-bottom: 4px solid;
+        border-color:  #6200ea;
+    }
+}
 
 .telnumber,
 .email {

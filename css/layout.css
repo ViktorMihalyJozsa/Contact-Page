@@ -20,12 +20,15 @@
     
     * CONTAINER
     *     .container;
-    * @media(max-width: 768px);
+    *     @media(max-width: 768px);
+    *     @media(max-width: 1025px);
     
     * HEADER
     *     .header;
     *         .site-logo;
     *         .navigation;
+    *     @media(max-width: 768px);
+    *     @media(max-width: 1025px);
     
     * MAIN
     *     main;
@@ -69,6 +72,21 @@
     row-gap: 40px;
 }
 
+@media(max-width: 1025px) {
+    .container {
+        display: grid;
+        grid-template-columns: 13vw 1fr 13vw;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "header header header"
+            ". main ."
+            ". aside ."
+            "footer footer footer";
+        column-gap: 30px;  /*  30px  */
+        row-gap: 40px;
+    }
+}
+
 @media(max-width: 768px) {
     .container {
         display: grid;
@@ -94,6 +112,7 @@ header {
     
     width:            auto;
     height:           80px;
+    padding:          0 auto;
     background-color: #6200ea;
 }
 
@@ -113,6 +132,51 @@ header {
         text-align:       right;
     }
 
+@media(max-width: 1025px) {
+    header {
+        grid-area:        header;
+        display:          table;
+        
+        width:            auto;
+        height:           auto;
+        padding:          20px 15vw 0px 15vw;
+        background-color: #6200ea;
+    }
+    
+        .site-logo {
+            display:        table-row;
+
+            vertical-align: middle;
+            text-align:     left;
+        }
+
+        .navigation {
+            display:        table-row;
+
+            vertical-align:   middle;
+            text-align:       right;
+        }
+}
+
+@media(max-width: 768px) {
+    header {
+        grid-area:        header;
+        display:          table;
+        
+        width:            auto;
+        height:           auto;
+        padding:          20px 0px 0px 0px;
+        background-color: #6200ea;
+    }
+    
+        .site-logo,
+        .navigation {
+            display:        table-row;
+    
+            vertical-align: middle;
+            text-align:     center;
+        }
+}
 
 /*  ========================================================================  *\
     M A I N
