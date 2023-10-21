@@ -22,14 +22,16 @@
     *     .footer-brandname, .footer-studentname;
     
     * REFERENCES
-    *     a, .menu;
+    *     a; 
+    *     .menu;
     *         .menu:hover;
     *         .menu:active;
-    
-    * LINKS
-    *     .link;
-    *     .link:hover;
-    *     .link:visited;
+    *     .telnumber,
+    *     .email;
+    *         .telnumber:hover,
+    *         .email:hover;
+    *         .telnumber:active,
+    *         .email:active;
     
     * BUTTONS
     *     .button;
@@ -128,6 +130,22 @@ a {
         color:     #ffffff;
     }
 
+.telnumber,
+.email {
+    display:     inline-block;
+    line-height: 25px;
+    }
+
+    .telnumber:hover,
+    .email:hover {
+    color: #ff0000;
+    }
+
+    .telnumber:active,
+    .email:active {
+    color: #ff0000;
+    }
+
 
 /*  ========================================================================  *\
     B U T T O N S
@@ -135,6 +153,7 @@ a {
 
 .button {
     display:          inline-block;
+    cursor:           pointer;
     width:            100%;
     margin-top:       20px;
     padding:          17.5px;  /*  17.5px  */
