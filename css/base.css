@@ -6,10 +6,10 @@
     
     * The project is divided into several separate style sheets:
     *
-    * meyer-reset.css.......CSS reset, so browsers start from an equal position.
-    * base.css..............Global rules and helpers.
-    * layout.css............CSS rules controlling the layout of the page.
-    * components.css........The own CSS of the components that make up the page.
+    * meyer-reset.css.....CSS reset, so browsers start from an equal position.
+    * base.css............Global rules and helpers.
+    * layout.css..........CSS rules controlling the layout of the page.
+    * components.css......The own CSS of the components that make up the page.
     
 \*  ========================================================================  */
 

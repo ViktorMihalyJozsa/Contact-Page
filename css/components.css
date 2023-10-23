@@ -76,8 +76,7 @@ h2 {
     color:         #6200ea;
 }
 
-h3,
-.menu {
+h3, .menu {
     color: #b2acba;
 }
 
@@ -147,14 +146,9 @@ a {
     line-height: max(25px, 1.316vw);  /*  Universal FHD-Tablet-Mobil min.-max.: 25px - FHD max.calc.  */
     }
 
-    .telnumber:hover,
-    .email:hover {
-    color: #ff0000;
-    }
-
-    .telnumber:active,
-    .email:active {
-    color: #ff0000;
+    .telnumber:hover, .telnumber:active,
+    .email:hover, .email:active {
+        color: #ff0000;
     }
 
 
