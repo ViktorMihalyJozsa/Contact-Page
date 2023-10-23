@@ -11,6 +11,13 @@
     
     * The classes declared here can be called on any container.
     * They wear the right size and behave the right way.
+
+    * FHD or Tablet or Mobil element-size(px) to vievport-size(vw) calc.;
+    * Viewport Width = width - ca.1vw ( min. 8px to max. 20px = scroll width);
+
+    * FHD width calc. = 1920px - 1vw or 20px(19.20) = 1900px;
+    * HD or Tablet width calc. = 1024px - 1vw or 10px(10.24) = 1014px;
+    * Mobil width calc. = 768px - 1vw or 8px(7.68) = 760px;
     
 \*  ========================================================================  */
 
@@ -68,13 +75,13 @@
         "header header header header"
         ". main aside ."
         "footer footer footer footer";
-    column-gap: 30px;  /*  30px  */
-    row-gap: 40px;
+    column-gap: 1.895vw;  /*  36px - FHD size  */
+    row-gap:    2.526vw;  /*  48px - FHD size  */
 }
 
 @media(max-width: 1025px) {
     .container {
-        display: grid;
+        display: grid; 
         grid-template-columns: 13vw 1fr 13vw;
         grid-template-rows: auto;
         grid-template-areas: 
@@ -82,8 +89,7 @@
             ". main ."
             ". aside ."
             "footer footer footer";
-        column-gap: 30px;  /*  30px  */
-        row-gap: 40px;
+        row-gap: 4.930vw;     /*  50px - Tablet size  */
     }
 }
 
@@ -97,7 +103,7 @@
             ". main ."
             ". aside ."
             "footer footer footer";
-        row-gap: 20px;
+        row-gap: 6.579vw;  /*  50px - Mobil size  */
     }
 }
 
@@ -111,7 +117,7 @@ header {
     display:          table;
     
     width:            auto;
-    height:           80px;
+    height:           4.210vw;  /*  80px - FHD */
     padding:          0 auto;
     background-color: #6200ea;
 }
@@ -119,7 +125,7 @@ header {
     .site-logo {
         display:        table-cell;
 
-        padding-left:   14.75vw;
+        padding-left:   14.895vw;  /*  13% width(13vw) + column-gap(1.895vw) - FHD  */
         vertical-align: middle;
         text-align:     left;
     }
@@ -127,7 +133,7 @@ header {
     .navigation {
         display:          table-cell;
 
-        padding-right:    14.75vw;
+        padding-right:    14.895vw;  /*  13% width(13vw) + column-gap(1.895vw) - FHD  */
         vertical-align:   middle;
         text-align:       right;
     }
@@ -139,7 +145,7 @@ header {
         
         width:            auto;
         height:           auto;
-        padding:          20px 15vw 0px 15vw;
+        padding:          1.972vw 14.895vw 0px 14.895vw;  /*  20px FHD 0 FHD  - Tablet  */
         background-color: #6200ea;
     }
     
@@ -165,7 +171,7 @@ header {
         
         width:            auto;
         height:           auto;
-        padding:          20px 0px 0px 0px;
+        padding:          2.631vw 0vw 0vw 0vw;  /*  20px 0px 0px 0px  - Mobil  */
         background-color: #6200ea;
     }
     
@@ -186,18 +192,18 @@ main {
     grid-area: main;
 
     height:           auto;
-    padding:          60px;
+    padding:          max(30px, 3.789vw);  /*  Universal FHD-Tablet-Mobil min.:30px max.:72px - FHD max.calc.  */
     border:           1px;
-    border-radius:    15px;
+    border-radius:    max(15px, 0.789vw);  /*  Universal FHD-Tablet-Mobil min.-max.: 15px - FHD max.calc.  */
     background-color: #ffffff;
 }
 
     .maps-box,
         .google-maps {
             width:         100%;
-            height:        280px;
+            height:        max(280px, 0.789vw);  /*  Universal FHD-Tablet-Mobil min.-max.:280px - FHD max.calc.  */
             border:        1px;
-            border-radius: 15px;
+            border-radius: max(15px, 0.789vw);   /*  Universal FHD-Tablet-Mobil min.-max.: 15px - FHD max.calc.  */
         }
 
     .postadress-box,
@@ -205,20 +211,14 @@ main {
     .mediaicon-box {
         width:      100%;
         text-align: left;
-        margin-top: 30px;
+        margin-top: max(30px, 1.578vw);  /*  Universal FHD-Tablet-Mobil min.-max.: 30px - FHD max.calc.  */
     }
 
-        ul {
-            list-style-type: none;
-        }
+        ul {list-style-type: none;} li {display: inline;}
 
-            li {
-                display: inline;
+            .social-icon {
+                margin-right: max(10px, 0.526vw);   /*  Universal FHD-Tablet-Mobil min.-max.: 10px - FHD max.calc.  */
             }
-
-                .social-icon {
-                    margin-right: 15px;
-                }
 
 
 /*  ========================================================================  *\
@@ -229,9 +229,9 @@ aside {
     grid-area:        aside;
 
     height:           auto;
-    padding:          60px;
+    padding:          max(30px, 3.789vw);  /*  Universal FHD-Tablet-Mobil min.:30px max.:72px - FHD max.calc.  */
     border:           1px;
-    border-radius:    15px;
+    border-radius:    max(15px, 0.789vw);   /*  Universal FHD-Tablet-Mobil min.-max.: 15px - FHD max.calc.  */
     background-color: #ffffff;
 }
 
@@ -243,14 +243,14 @@ aside {
     .form-email,
     .form-messeage {
         width:      calc(100% - 25px);
-        margin-top: 15px;
-        padding:    16px 0px 16px 24px;
-        background: #f4f3f5 0% 0% no-repeat padding-box;
+        margin-top: max(15px, 0.789vw);           /*  Universal FHD-Tablet-Mobil min.-max.: 15px - FHD max.calc.  */
+        padding:    1.010vw 0vw 1.010vw 1.516vw;  /*  Universal FHD-Tablet-Mobil min.-max.: 19.2px 0px 19.2px 28.8px - FHD max.calc.  */
         border:     none;
+        background: #f4f3f5 0% 0% no-repeat padding-box;
     }
 
     .form-messeage {
-        height: 120px;
+        height: max(120px, 6.315vw);  /*  Universal FHD-Tablet-Mobil min.-max.:120px - FHD max.calc.  */
     }
 
 
@@ -261,8 +261,8 @@ aside {
 footer {
     grid-area:        footer;
 
-    margin-top:       20px;
-    padding:          42.5px;   /*  43px  */
+    margin-top:       max(20px, 1.052vw);    /*  Universal FHD-Tablet-Mobil min.-max.: 20px - FHD max.calc.  */
+    padding:          max(42.5px, 2.239vw);  /*  Universal FHD-Tablet-Mobil min.-max.: 42.5px - FHD max.calc.  */
     background-color: #211138;
     text-align:       center;
 }
