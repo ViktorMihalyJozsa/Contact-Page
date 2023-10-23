@@ -8,6 +8,13 @@
     * It was visible until now, but here it is very strongly enforced by:
     * BEM (Block - Element - Modifier) thinking in the code.
 
+    * FHD or Tablet or Mobil element-size(px) to vievport-size(vw) calc.;
+    * Viewport Width = width - ca.1vw ( min. 8px to max. 20px = scroll width);
+
+    * FHD width calc. = 1920px - 1vw or 20px(19.20) = 1900px;
+    * HD or Tablet width calc. = 1024px - 1vw or 10px(10.24) = 1014px;
+    * Mobil width calc. = 768px - 1vw or 8px(7.68) = 760px;
+
 \*  ========================================================================  */
 
 /*  ========================================================================  *\
@@ -26,8 +33,6 @@
     *     .menu;
     *         .menu:hover;
     *         .menu:active;
-    *     @media(max-width: 768px);
-    *     @media(max-width: 1025px);
     *
     *     .telnumber,
     *     .email;
@@ -47,10 +52,10 @@
 
 h1 {
     text-transform: none;
-    margin-bottom:  10px;
-    font-size:      40px;  /*  Mobil: min.size=24px  -  Tablet: vievport size  -  FHD: max.size=40px  */
+    margin-bottom:  max(10px, 0.526vw);   /*  Universal FHD-Tablet-Mobil min.-max.: 10px - FHD max.calc.  */
+    font-size:      max(40px, 2.105vw);   /*  Universal FHD-Tablet-Mobil min.-max.: 40px - FHD max.calc.  */
     font-weight:    bold;
-    line-height:    50px;  /*  125%  */
+    line-height:    max(50px, 2.631vw);   /*  Universal FHD-Tablet-Mobil min.-max.: 50px - FHD max.calc.  */
     letter-spacing: 0;
 }
 
@@ -59,15 +64,15 @@ a,
 .menu,
 .button {
     text-transform: uppercase;
-    font-size:      12px;
+    font-size:      max(12px, 0.631vw);  /*  Universal FHD-Tablet-Mobil min.-max.: 12px - FHD max.calc.  */
     font-weight:    bold;
-    line-height:    15px;
+    line-height:    max(15px, 0.789vw);  /*  Universal FHD-Tablet-Mobil min.-max.: 15px - FHD max.calc.  */
     letter-spacing: 2.4px;
     opacity:        1;
 }
 
 h2 {
-    margin-bottom: 10px;
+    margin-bottom: max(10px, 0.526vw);   /*  Universal FHD-Tablet-Mobil min.-max.: 10px - FHD max.calc.  */
     color:         #6200ea;
 }
 
@@ -77,15 +82,15 @@ h3,
 }
 
 p {
-    font-size:      20px;  /*  14px  */
-    line-height:    30px;  /*  150%  */
+    font-size:      max(20px, 1.052vw);  /*  Universal FHD-Tablet-Mobil min.-max.: 20px - FHD max.calc.  */
+    line-height:    max(30px, 1.579vw);  /*  150%  */
     letter-spacing: 0;
     text-align:     left;
 }
 
 .p-adress {
-    font-size:      14px;  /*  14px  */
-    line-height:    14px;  /*  100%  */
+    font-size:      max(14px, 0.737vw);  /*  Universal FHD-Tablet-Mobil min.-max.: 10px - FHD max.calc.  */
+    line-height:    max(14px, 0.737vw);  /*  100%  */
     letter-spacing: 0;
     text-align:     left;
 }
@@ -94,7 +99,7 @@ p {
 .form-email,
 .form-messeage {
     text-align:     left;
-    font:           normal normal bold 14px/18px Montserrat;
+    font:           normal normal bold max(14px, 0.737vw)/max(18px, 0.947vw) Montserrat;
     letter-spacing: 0px;
     opacity:        1;
 }
@@ -116,15 +121,18 @@ a {
 }
 
 .menu {
-    display:       inline-block;
-    margin:        0px 0px 0px 60px;
-    padding:       32.5px 0px 28.5px 0px;
-    border-bottom: 4px solid;
-    border-color:  #6200ea;
+    display:        inline-block;
+
+    margin-right:   0;
+    margin-left:    3.789vw;  /*  72px - FHD calc.  */
+    padding-top:    32.5px;
+    padding-bottom: 28.5px;
+    border-bottom:  4px solid;
+    border-color:   #6200ea;
 }
 
     .menu:hover {
-        border-bottom: 4px solid;  /*  4px  */
+        border-bottom: 4px solid;  /*  4px - FHD calc.  */
         border-color:  #ffffff;
         color:         #ffffff;
     }
@@ -133,30 +141,10 @@ a {
         color:     #ffffff;
     }
 
-@media(max-width: 1025px) {
-    .menu {
-        display:       inline-block;
-        margin:        0px 0px 0px 60px;
-        padding:       32.5px 0px 28.5px 0px;
-        border-bottom: 4px solid;
-        border-color:  #6200ea;
-    }
-}
-
-@media(max-width: 768px) {
-    .menu {
-        display:       inline-block;
-        margin:        0px 20px 0px 20px;
-        padding:       32.5px 0px 28.5px 0px;
-        border-bottom: 4px solid;
-        border-color:  #6200ea;
-    }
-}
-
 .telnumber,
 .email {
     display:     inline-block;
-    line-height: 25px;
+    line-height: max(25px, 1.316vw);  /*  Universal FHD-Tablet-Mobil min.-max.: 25px - FHD max.calc.  */
     }
 
     .telnumber:hover,
@@ -178,10 +166,10 @@ a {
     display:          inline-block;
     cursor:           pointer;
     width:            100%;
-    margin-top:       20px;
-    padding:          17.5px;  /*  17.5px  */
+    margin-top:       max(20px, 1.052vw);    /*  Universal FHD-Tablet-Mobil min.-max.: 20px - FHD max.calc.  */
+    padding:          max(17.5px, 0.921vw);  /*  Universal FHD-Tablet-Mobil min.:30px max.: 17.5px - FHD max.calc.  */
     border:           2px solid;
-    border-radius:    25px;  /*  25px  */
+    border-radius:    max(30px, 3.789vw);    /*  Universal FHD-Tablet-Mobil min.:30px max.: 30px - FHD max.calc.  */
     background-color: #6200ea;
     text-align:       center;
     color:            #ffffff;

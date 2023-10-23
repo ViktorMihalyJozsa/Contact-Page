@@ -145,22 +145,19 @@ header {
         
         width:            auto;
         height:           auto;
-        padding:          1.972vw 14.895vw 0px 14.895vw;  /*  20px FHD 0 FHD  - Tablet  */
-        background-color: #6200ea;
+        padding:          1.972vw 14.895vw 0px 14.895vw;  /*  20px FHD(padding-right) 0 FHD(padding-right)  - Tablet  */
     }
     
         .site-logo {
             display:        table-row;
 
-            vertical-align: middle;
-            text-align:     left;
+            padding: 0 auto;
         }
 
         .navigation {
             display:        table-row;
 
-            vertical-align:   middle;
-            text-align:       right;
+            padding: 0 auto;
         }
 }
 
@@ -169,19 +166,8 @@ header {
         grid-area:        header;
         display:          table;
         
-        width:            auto;
-        height:           auto;
-        padding:          2.631vw 0vw 0vw 0vw;  /*  20px 0px 0px 0px  - Mobil  */
-        background-color: #6200ea;
+        padding:          2.631vw 6.579vw 0vw 6.579vw;  /*  20px 50px 0px 50px  - Mobil  */
     }
-    
-        .site-logo,
-        .navigation {
-            display:        table-row;
-    
-            vertical-align: middle;
-            text-align:     center;
-        }
 }
 
 /*  ========================================================================  *\
@@ -228,21 +214,22 @@ main {
 aside {
     grid-area:        aside;
 
+    width:            auto;
     height:           auto;
-    padding:          max(30px, 3.789vw);  /*  Universal FHD-Tablet-Mobil min.:30px max.:72px - FHD max.calc.  */
+    padding:          max(30px, 3.789vw);  /*  Universal FHD-Tablet-Mobil min.-max.:30px - FHD max.calc.  */
     border:           1px;
     border-radius:    max(15px, 0.789vw);   /*  Universal FHD-Tablet-Mobil min.-max.: 15px - FHD max.calc.  */
     background-color: #ffffff;
 }
 
 .form {
-    margin: 5px 0px 0px 0px;
+    margin-top: max(5px, 0.260vw);  /*  Universal FHD-Tablet-Mobil min.-max.: 5px - FHD max.calc.  */
 }
 
     .form-name,
     .form-email,
     .form-messeage {
-        width:      calc(100% - 25px);
+        width:      calc(100% - 1.516vw);         /*  100% minus left-padding(28.8px) - FHD max.calc.  */
         margin-top: max(15px, 0.789vw);           /*  Universal FHD-Tablet-Mobil min.-max.: 15px - FHD max.calc.  */
         padding:    1.010vw 0vw 1.010vw 1.516vw;  /*  Universal FHD-Tablet-Mobil min.-max.: 19.2px 0px 19.2px 28.8px - FHD max.calc.  */
         border:     none;
